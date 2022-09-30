@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/text-to-image", methods=['POST'])
 def make_predict():
     json = request.get_json()
-    prompt = json['prompt']
+    prompt = json['Prompt']
     seed = random.randint(100000000, 999999999)
     params = Input(prompt, 12, "outputs/txt2img-samples", 25, 1, seed)
     main(params)
